@@ -1,5 +1,6 @@
 package com.example.mlebeau.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button buttonmap = (Button)findViewById(R.id.buttonmap);
+
         Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener(){
 
@@ -31,7 +34,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+        buttonmap.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                cliqueMap();
+            }
+
+
+        });
     }
 
     public void cliqueBouton(){
@@ -45,5 +56,10 @@ public class MainActivity extends AppCompatActivity {
         ListView lv = (ListView)findViewById(R.id.listview);
         lv.setAdapter(new ArrayAdapter<Pokemon>(this,android.R.layout.simple_list_item_1, pokedex));
         et.setText("");
+    }
+
+    public void cliqueMap(){
+        Intent intent = new Intent(this,MapsActivity.class);
+        startActivity(intent);
     }
 }

@@ -30,7 +30,7 @@ public class Pokemon {
 
     @Override
     public String toString(){
-        NumberFormat df = new DecimalFormat("#0.0000");
-        return nom + " " + "(" + df.format(position.getLat()) + "." +  df.format(position.getLng()) + ")";
+        NumberFormat df = new DecimalFormat("####0.0000");
+        return nom + " " + "(" + df.format(position.getLat()) + "/" +  df.format(position.getLng()) + ")";
     }
 }
