@@ -14,7 +14,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Pokemon> pokedex = new ArrayList<>();
+    private static ArrayList<Pokemon> pokedex = new ArrayList<>();
+
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -44,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
+
+    public static ArrayList<Pokemon> getPokedex() {
+        return pokedex;
+    }
+
 
     public void cliqueBouton(){
         /*Toast.makeText(getApplicationContext(),"Clique",Toast.LENGTH_SHORT).show();*/
