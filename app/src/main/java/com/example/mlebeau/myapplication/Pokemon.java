@@ -5,12 +5,11 @@ package com.example.mlebeau.myapplication;
  */
 
 public class Pokemon {
-    private int id;
+
     private String nom;
     private Position position;
 
-    public Pokemon(int id, String nom, Position position) {
-        this.id = id;
+    public Pokemon(String nom, Position position) {
         this.nom = nom;
         this.position = position;
     }

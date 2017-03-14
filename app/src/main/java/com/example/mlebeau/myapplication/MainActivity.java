@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,8 +37,11 @@ public class MainActivity extends AppCompatActivity {
     public void cliqueBouton(){
         /*Toast.makeText(getApplicationContext(),"Clique",Toast.LENGTH_SHORT).show();*/
         EditText et = (EditText)findViewById(R.id.editText);
-        String txt = et.getText().toString();
-        pokedex.add(txt);
+        String nom = et.getText().toString();
+        Random random = new Random();
+        Position pos_h = new Position(44+random.nextDouble()*2,random.nextDouble()+3);
+        Pokemon unPokemon = new Pokemon(nom, pos_h  );
+        pokedex.add(unPokemon);
         ListView lv = (ListView)findViewById(R.id.listview);
         lv.setAdapter(new ArrayAdapter<Pokemon>(this,android.R.layout.simple_list_item_1, pokedex));
         et.setText("");
